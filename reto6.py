@@ -33,10 +33,35 @@ class Auto:
             print("¡Ya dejame descansar por favor!")
 
 
-auto_Keyla = Auto("Audi", "NegroSLE", "2023")
+    #Metodo de Clase
+    @classmethod
+    def nuevo_carro (cls):
+        marca = "Toyota"
+        modelo = "VTS-554"
+        anio = "2025"
+        return cls(marca, modelo, anio)
+    
+    
+    @classmethod
+    def actualizar_klmt(cls, carro, kilometraje):
+        if(kilometraje > 0):
+            carro.kilometraje += kilometraje
+            print(f"Se ha actualizado el kilometraje a {carro.kilometraje} km.")
+        else:
+            print("No se puede reducir el kilometraje")
 
-print(auto_Keyla.__dict__)
-print(auto_Keyla.mostrar_informacion())
-print(auto_Keyla.actualizar_kilometraje(5))
-print(auto_Keyla.realizar_viaje(30))
-print(auto_Keyla.estado_auto())
+
+    #Metodo Estatico
+    @staticmethod
+    def comparar_kilometraje (kmt1, kmt2):
+        if(kmt1.kilometraje == kmt2.kilometraje):
+            return "Los dos autos tienen el mismo kilometraje."
+        return "No tienen el mismo kilometraje."
+    
+    @staticmethod
+    def medidor_km(auto, km):
+        if km >= 0:
+            auto.kilometraje += km
+            print(f"Se han recorrido {km} km. El kilometraje actual es: {auto.kilometraje} km")
+        else:
+            print("La cantidad debe ser numeros positivos.")
