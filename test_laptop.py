@@ -24,10 +24,24 @@ laptop_maria = Laptop("lenovo", "i7", 32, 600)
 #print(laptop_juanito.costo)
 
 
-# laptop_juanito = Laptop_Gaming("MSI", "i7", 4, "RTX 8GB")
+laptop_juanito = Laptop_Gaming("MSI", "i7", 4, "RTX 8GB")
 
 # print(laptop_juanito.realizar_diagnostico_sistema())
 
 
 laptop_sara = Laptop_Business("MAC", "i9", 8, "24 GB", "5 HORAS")
 print(laptop_sara.realizar_diagnostico_sistema())
+
+# FUNCION PARA EJECUTAR LOS POLIMORFISMO
+def imprimir_informe(laptop):
+    informe = laptop.realizar_informe_uso()
+    for clave, valor in informe.items():
+        print(f"{clave} : {valor}")
+    print("\n")
+
+
+print("PEPITO: ")
+imprimir_informe(laptop_pepito)
+
+print("JUANITO: ")
+imprimir_informe(laptop_juanito)

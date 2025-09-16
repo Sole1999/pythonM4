@@ -28,6 +28,18 @@ class Laptop:
         }
         return resultado
     
+    
+    #METODO DE LA CLASE PARA EL POLIFORMISMO
+    def realizar_informe_uso(self):
+        resultado_informe ={
+            "Tipo" : "Generica",
+            "Uso Recomendado" : "Tareas cotidianas",
+            "Horas de uso" : 5,
+            "Diagnostico actual" : self.realizar_diagnostico_sistema()
+        }
+        return resultado_informe
+    
+
 
     #METODO ESTATICO
     @staticmethod
